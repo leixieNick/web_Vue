@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script type="text/javascript">
+        var data = {message: 123};
+        var vm = new Vue({
+            el: "#app",
+            data: data,
+        });
+        vm.$data.message = "test...";
+        vm.$watch('message', function(newVal, oldVal){
+            console.log(newVal, oldVal);
+        });
+
+    </script>
+
+</body>
+</html>
