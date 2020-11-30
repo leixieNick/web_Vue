@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+
+        <ul>
+            <li v-for="(item,index) in items" :key="index">
+                {{index}} {{item.msg}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(value,key) in object" :key="key">
+                {{key}} : {{value}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "Vue!",
+                items: [
+                    {msg: "Header"},
+                    {msg: "Footer"},
+                ],
+                object: {
+                    title: 'How to do lists in Vue',
+			        author: 'Jane Doe',
+			        publishedAt: '2016-04-10'
+                },
+            }
+        })
+    </script>
+    
+</body>
+</html>
