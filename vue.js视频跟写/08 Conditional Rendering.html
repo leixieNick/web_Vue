@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+    
+    <div id="app">
+        {{message}}
+
+        <div v-if="type === 'A'">
+            AAA
+        </div>
+
+        <div v-else-if="type === 'B'">
+            BBB
+        </div>
+
+        <div v-else-if="type === 'C'">
+            CCC
+        </div>
+
+        <div v-else>
+            Not AAABBBCCC
+        </div>
+
+        <h1 v-show="ok">Hello Vue</h1>
+
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "Vue!",
+                type: "D",
+                ok: false,
+            }
+        })
+    </script>
+
+</body>
+</html>
